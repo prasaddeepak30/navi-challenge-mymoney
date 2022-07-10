@@ -1,0 +1,1 @@
+./gradlew --no-daemon clean build jacocoTestReport bootJar
