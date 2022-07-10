@@ -1,14 +1,9 @@
-# Solution for [Geektrust Backend Challenge - MyMoney](https://www.geektrust.in/coding-problem/backend/mymoney)
+# Solution for [Navi Backend Challenge - MyMoney](https://codu.ai/coding-problem/mymoney)
 
-[![gradle-coverage](https://github.com/vaidic/geektrust-challenge-mymoney/actions/workflows/gradle-coverage.yml/badge.svg)](https://github.com/Vaidic/geektrust-challenge-mymoney/actions/workflows/gradle-coverage.yml)
-[![codecov](https://codecov.io/gh/Vaidic/geektrust-challenge-mymoney/branch/main/graph/badge.svg?token=JG7TPKWSQF)](https://codecov.io/gh/Vaidic/geektrust-challenge-mymoney)
-[![CodeFactor](https://www.codefactor.io/repository/github/vaidic/geektrust-challenge-mymoney/badge/main)](https://www.codefactor.io/repository/github/vaidic/geektrust-challenge-mymoney/overview/main)
-[![DeepSource](https://deepsource.io/gh/Vaidic/geektrust-challenge-mymoney.svg/?label=active+issues&show_trend=true&token=Dfz5PcRjXpGyTVzeQEAaW5DI)](https://deepsource.io/gh/Vaidic/geektrust-challenge-mymoney/?ref=repository-badge) \
-[![License](https://img.shields.io/github/license/Vaidic/geektrust-challenge-mymoney?style=plastic)](LICENSE)
-![Java](https://img.shields.io/badge/OpenJDK-11-red) \
-[![commits](https://badgen.net/github/commits/vaidic/geektrust-challenge-mymoney/main)](https://github.com/Vaidic/geektrust-challenge-mymoney/commits/main)
-[![last-commit](https://badgen.net/github/last-commit/vaidic/geektrust-challenge-mymoney/main)](https://github.com/Vaidic/geektrust-challenge-mymoney/commits/main)
-[![releases](https://badgen.net/github/release/Vaidic/geektrust-challenge-mymoney)](https://github.com/Vaidic/geektrust-challenge-mymoney/releases)
+![Java](https://img.shields.io/badge/OpenJDK-11-red) 
+[![commits](https://badgen.net/github/commits/prasaddeepak30/navi-challenge-mymoney/main)](https://github.com/prasaddeepak30/navi-challenge-mymoney/commits/main)
+[![last-commit](https://badgen.net/github/last-commit/prasaddeepak30/navi-challenge-mymoney/main)](https://github.com/prasaddeepak30/navi-challenge-mymoney/commits/main)
+[![releases](https://badgen.net/github/release/prasaddeepak30/navi-challenge-mymoney)](https://github.com/prasaddeepak30/navi-challenge-mymoney/releases)
 
 ## Problem Statement
 
@@ -29,7 +24,7 @@ percentage should be derived from the initial allocation made.
 
 The supported commands are: \
 `ALLOCATE`, `SIP`, `CHANGE`, `BALANCE`, `REBALANCE`
-> [Complete problem statement](Geektrust.in_MyMoney.pdf)
+> [Complete problem statement](https://codu.ai/coding-problem/mymoney)
 
 ## Assumptions
 
@@ -47,6 +42,10 @@ The supported commands are: \
 4. SIP, Change percentages can be declared only once for a month.
 5. The system only works for 1-year (Jan-Dec) as there is no way to distinguish between years from input.
 
+## Building the Project
+
+Execute `./build.sh`
+
 ## Running the Project
 
 The project can be run in following modes:
@@ -56,22 +55,22 @@ The project can be run in following modes:
 
 ### Running in **`Batch Mode`**
 
-1. Download the [latest geektrust.jar]()
+1. Download the [latest navi-challenge-mymoney.jar]() or execute `./build.sh` to get library
 2. Execute the following command replacing _<path-to-inputfile>_ with the path for input file
 
 ```shell
-java -jar geektrust.jar <path-to-inputfile>
+java -jar navi-challenge-mymoney.jar <path-to-inputfile>
 ```
 
 3. The output will be printed on the console
 
 ### Running in  **`Interactive Shell Mode`**
 
-1. Download the [latest geektrust.jar]()
+1. Download the [latest navi-challenge-mymoney.jar]() or execute `./build.sh` to get library
 2. Execute the following command
 
 ```shell
-java -jar geektrust.jar SHELL
+java -jar navi-challenge-mymoney.jar SHELL
 ```
 
 3. Execute one of the available command `ALLOCATE`, `SIP`, `CHANGE`, `BALANCE`, `REBALANCE`
@@ -100,14 +99,15 @@ REBALANCE
 2. Command to execute:
 
 ```shell
-java -jar geektrust.jar inputfile
+java -jar navi-challenge-mymoney.jar inputfile
 ```
 
 3. The output printed on the console
 
 ```shell
-Sep 12, 2021 12:04:01 PM org.hibernate.validator.internal.util.Version <clinit>
-INFO: HV000001: Hibernate Validator 6.1.7.Final
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#noProviders for further details.
 10593 7897 2272
 23619 11809 3936
 ```
@@ -136,7 +136,7 @@ rebalance
 2. Open the Interactive Shell using:
 
 ```shell
-java -jar geektrust.jar SHELL
+java -jar navi-challenge-mymoney.jar SHELL
 ```
 
 3. The Interactive Shell opens a `my-money-cli:> ` prompt
@@ -163,26 +163,3 @@ my-money-cli:> exit
 ```
 
 5. Use `exit` to exit the shell
-
-## Key Points regarding Design
-
-- [x] Calculations done lazily - not unless the balance is asked or re-balancing is required,
-- [x] Calculated values are cached to avoid re-calculations
-
-## Points to Ponder
-
-1. Is using Spring Boot required?
-    - No, This could be implemented using POJOs as well.
-    - Spring Boot is used to make the solution mimic the Enterprise Java Solution preferred by companies over POJO
-      solutions.
-    - Spring Boot comes with additional features like inherent dependency-injection that makes code more maintainable.
-
-2. The Exceptions thrown by service class are being propagated but not handled.
-    - This can be improved; it is not good user experience to display Exceptions, rather user-friendly error messages
-      should be used to handle these exceptions.
-
-3. Using a lazy-calculation scheme - i.e. we compute the balance only when user checks for balance or re-balacing is
-   required.
-    - This can be replaced with eager calculation to improve response time for user.
-    - Can also be done as a background batch job, without impacting performance.
-
