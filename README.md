@@ -56,7 +56,7 @@ The project can be run in following modes:
 
 ### Running in **`Batch Mode`**
 
-1. Download the [latest navi-challenge-mymoney.jar]() or execute `./build.sh` to get library
+1. Download the [latest navi-challenge-mymoney.jar](https://github.com/prasaddeepak30/navi-challenge-mymoney/blob/main/blob/navi-challenge-mymoney.jar) or execute `./build.sh` to get library
 2. Execute the following command replacing _<path-to-inputfile>_ with the path for input file
 
 ```shell
@@ -67,7 +67,7 @@ java -jar navi-challenge-mymoney.jar <path-to-inputfile>
 
 ### Running in  **`Interactive Shell Mode`**
 
-1. Download the [latest navi-challenge-mymoney.jar]() or execute `./build.sh` to get library
+1. Download the [latest navi-challenge-mymoney.jar](https://github.com/prasaddeepak30/navi-challenge-mymoney/blob/main/blob/navi-challenge-mymoney.jar) or execute `./build.sh` to get library
 2. Execute the following command
 
 ```shell
