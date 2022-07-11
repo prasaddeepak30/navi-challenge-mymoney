@@ -46,6 +46,7 @@ The supported commands are: \
 ## Building the Project
 
 Execute `./build.sh`
+Library will be published under path `./build/libs/navi-challenge-mymoney.jar`
 
 ## Running the Project
 
